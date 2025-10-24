@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Fin del Juego";
+}
+<div class="container-center">
+    <h1>El juego termino!</h1>
+    <h2>Jugador: @ViewBag.Username</h2>
+    <h3>Puntaje Final: @ViewBag.PuntajeFinal</h3>
+    <a class="btn btn-success mt-3" href='@Url.Action("ConfigurarJuego", "Home")'>Jugar de Nuevo</a>
+</div>

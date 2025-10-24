@@ -1,0 +1,192 @@
+html {
+  font-size: 14px;
+  min-height: 100%;
+}
+
+/* 🎨 Estilos generales */
+body {
+  background: linear-gradient(135deg, #c2d2eb, #6610f2);
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor principal centrado */
+.container-center, .configurar-container, #juego-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5 {
+  margin: 30px;
+}
+
+/* Inputs y selects */
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Botones */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.btn-success {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-primary:hover, .btn-success:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Preguntas */
+#juego-container p {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+/* Imagen de pregunta */
+#fotoPregunta {
+  width: 250px;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Opciones */
+.radio-group {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+
+}
+
+.radio-group:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Imagenes de respuesta */
+.img-respuesta {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+/* Mensaje de respuesta */
+#mensaje {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: none;
+}
+
+.correcto {
+  background-color: rgba(25, 135, 84, 0.8);
+  color: #000000;
+  display: block;
+}
+
+.incorrecto {
+  background-color: rgba(220, 53, 69, 0.8);
+  color: #000000;
+  display: block;
+}
+
+/* Botón siguiente */
+#btnSiguiente {
+  margin-top: 20px;
+}
+
+/* Animaciones suaves */
+button, .radio-group, input, select {
+  transition: all 0.2s ease;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .configurar-container, #juego-container, .container-center {
+      padding: 25px;
+  }
+
+  .img-respuesta {
+      width: 60px;
+      height: 60px;
+  }
+
+  #fotoPregunta {
+      width: 200px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 10px;
+  padding: 10px;
+}
+
+
+footer {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}

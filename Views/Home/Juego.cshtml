@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Juego";
+}
+<div id="juego-container">
+    <h3>Jugador: <span id="username">@ViewBag.Username</span></h3>
+    <h4>Puntaje: <span id="puntaje">@ViewBag.PuntajeActual</span></h4>
+    <h5>Pregunta @(@ViewBag.ContadorPregunta + 1):</h5>
+    <p id="enunciado">@ViewBag.PreguntaActual.Enunciado</p>
+    @if(!string.IsNullOrEmpty(ViewBag.PreguntaActual.Foto))
+    {
+        <img id="fotoPregunta" src="@ViewBag.PreguntaActual.Foto" alt="Imagen Pregunta" />
+    }
+
+    <form method="post" action='@Url.Action("VerificarRespuesta", "Home")' id="formRespuesta">
+        <input type="hidden" name="idPregunta" value="@ViewBag.PreguntaActual.IdPregunta" />
+        @foreach(Respuesta respuesta in ViewBag.Respuestas)
+        {
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="idRespuesta" value="@respuesta.IdRespuesta" required />
+                    @respuesta.Opcion. @respuesta.Contenido
+                    @if(!string.IsNullOrEmpty(respuesta.Foto))
+                    {
+                        <img src="@respuesta.Foto" alt="Imagen Respuesta" class="img-respuesta" />
+                    }
+                </label>
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Verificar</button>
+    </form>
+
+    <div id="mensaje" class='@(ViewBag.MensajeRespuesta == "¡Correcto!" ? "correcto" : "incorrecto")' style='@(ViewBag.MensajeRespuesta != null ? "display:block;" : "")'>
+        @ViewBag.MensajeRespuesta
+    </div>
+</div>
+
+<div id="mensaje" style="display:none;"></div>
+<button id="btnSiguiente" style="display:none;" class="btn btn-success mt-3" onclick="irASiguientePregunta()">Siguiente</button>
+
+
+

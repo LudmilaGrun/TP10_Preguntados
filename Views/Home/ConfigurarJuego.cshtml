@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Configurar Juego";
+}
+<div class="configurar-container">
+    <h2>Configurar Juego</h2>
+    <form method="post" action='@Url.Action("Comenzar", "Home")'>
+        <div class="form-group">
+            <p>Nombre:</p>
+            <input type="text" name="username" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <p>Categoría:</p>
+            <select name="categoria" class="form-control" required>
+                <option value="-1">Todas</option>
+                @foreach(Categoria categoria in ViewBag.Categorias)
+                {
+                    <option value="@categoria.IdCategoria">@categoria.Nombre</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Jugar</button>
+    </form>
+</div>
